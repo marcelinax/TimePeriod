@@ -20,10 +20,10 @@ namespace Time_TimePeriod
 
         public Time(string time)
         {
-            var timeSpan = TimeSpan.Parse(time);
-            Hours = Convert.ToByte(timeSpan.Hours);
-            Minutes = Convert.ToByte(timeSpan.Minutes);
-            Seconds = Convert.ToByte(timeSpan.Seconds);
+            var timeTab = time.Split(':');
+            Hours = Convert.ToByte(timeTab[0]);
+            Minutes = Convert.ToByte(timeTab[1]);
+            Seconds = Convert.ToByte(timeTab[2]);
         }
         public override string ToString()
         {
@@ -50,6 +50,14 @@ namespace Time_TimePeriod
         public static bool operator >= (Time t1, Time t2) => t1.CompareTo(t2) >= 0;
         public static bool operator < (Time t1, Time t2) => t1.CompareTo(t2) < 0;
         public static bool operator <= (Time t1, Time t2) => t1.CompareTo(t2) <= 0;
-       
+
+        public Time TimePlus(TimePeriod timePeriod)
+        {
+            var 
+        }
+        public static Time TimePlus(TimePeriod timePeriod, Time time)
+        {
+            
+        }
     }
 }

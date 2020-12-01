@@ -25,6 +25,7 @@
         <e p="Program.cs" t="Include" />
         <e p="Time.cs" t="Include" />
         <e p="Time_TimePeriod.csproj" t="IncludeRecursive" />
+        <e p="TimePeriod.cs" t="Include" />
       </e>
       <e p="Time_TimePeriod.sln" t="IncludeFlat" />
       <e p="Time_TimePeriodUnitTests" t="IncludeRecursive">
