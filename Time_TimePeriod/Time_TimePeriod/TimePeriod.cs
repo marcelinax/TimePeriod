@@ -15,11 +15,25 @@ namespace Time_TimePeriod
             seconds = (long) (hour * 3600 + (ulong) (minute * 60) + second);
         }
 
-        public TimePeriod TimePeriodPlus(Time t1, Time t2)
+        public TimePeriod(long s)
+        {
+            seconds = s;
+        }
+
+        public TimePeriod (Time t1, Time t2)
         {
             var time = ConvertToSeconds(t1);
             var time2 = ConvertToSeconds(t2);
-            seconds = (time2 - time)? < 0 ? (time2 - time) + 24 * 3600 : time2 - time;
+            if (time2 - time < 0)
+            {
+                seconds = (time2 - time) + 24 * 3600;
+            }
+            else  seconds = time2 - time;
+        }
+
+        public TimePeriod TimePeriodPlus(TimePeriod timePeriod)
+        {
+            return new TimePeriod(seconds + timePeriod.seconds);
         }
 
         public TimePeriod(string timePeriod)

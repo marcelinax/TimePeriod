@@ -23,8 +23,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8604cc86-0dd0-469e-afbd-506ddff05293" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Time_TimePeriod/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Time_TimePeriod/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Time_TimePeriod/Time.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Time_TimePeriod/Time.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Time_TimePeriod/TimePeriod.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Time_TimePeriod/TimePeriod.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -91,7 +89,7 @@
       <workItem from="1606571538855" duration="650000" />
       <workItem from="1606683043589" duration="2250000" />
       <workItem from="1606731743363" duration="575000" />
-      <workItem from="1606841259640" duration="15377000" />
+      <workItem from="1606841259640" duration="15809000" />
     </task>
     <servers />
   </component>
