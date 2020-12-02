@@ -66,10 +66,19 @@ namespace Time_TimePeriodUnitTests
             Time t = new Time(h,m,s);
             AssertTime(t,expectedH, expecetedM,expecetedS);
         }
+        [TestMethod, TestCategory("Time Constructors")]
+        [DataRow("11:22:09",(byte)11, (byte)22,(byte)9)]
+        [DataRow("01:02:03",(byte)1, (byte)2, (byte)3)]
+        [DataRow("18:13:02",(byte)18,(byte)13,(byte) 2)]
+        public void StringConstructor(string t,byte h, byte m, byte s)
+        {
+            Time timeToString = new Time(t);
+            AssertTime(timeToString,h,m,s);
+        }
         #endregion
 
         #region TimePeriod
-        [TestMethod, TestCategory("TimePeriod Constructors")]
+        /*[TestMethod, TestCategory("TimePeriod Constructors")]
         public void DefaultConstructorForTimePeriod()
         {
             TimePeriod t = new TimePeriod();
@@ -82,7 +91,7 @@ namespace Time_TimePeriodUnitTests
         public void ConstructorWithDefaultParamForTimePeriod(ulong h, byte m, ulong expectedH, byte expectedM){
             TimePeriod time = new TimePeriod( h, m);
             AssertTime(time,  expectedH,  expectedM, 0);
-        }
+        }*/
         
 
         #endregion
@@ -90,32 +99,64 @@ namespace Time_TimePeriodUnitTests
 
         #region ToStringTests
 
-        /*[TestMethod, TestCategory("String representation")]*/
+        [TestMethod, TestCategory("String representation")]
+        public void DefaultToString()
+        {
+            var t = new Time(12,30);
+            string expectedString = "12:30:00";
+            Assert.AreEqual(expectedString, t.ToString());
+        }
+
+        [TestMethod, TestCategory("String representation")]
+        [DataRow((byte)18,(byte)13,(byte) 2, "18:13:02")]
+        [DataRow((byte)2,(byte)27,(byte) 59, "02:27:59")]
+        [DataRow((byte)22,(byte)2,(byte) 23, "22:02:23")]
+        public void ToString(byte h, byte m, byte s, string expectedString)
+        {
+            var t = new Time(h,m,s);
+            Assert.AreEqual(expectedString, t.ToString());
+        }
+        [TestMethod, TestCategory("String representation")]
+        public void DefaultToStringForTimePeriod()
+        {
+            var t = new TimePeriod(129,30, 23);
+            string expectedString = "129:30:23";
+            Assert.AreEqual(expectedString, t.ToString());
+        }
+        [TestMethod, TestCategory("String representation")]
+        [DataRow((ulong)18,(byte)13,(byte) 2, "18:13:02")]
+        [DataRow((ulong)2,(byte)27,(byte) 59, "2:27:59")]
+        [DataRow((ulong)22,(byte)2,(byte) 23, "22:02:23")]
+        public void ToStringForTimePeriod(ulong h, byte m, byte s, string expectedString)
+        {
+            var t = new TimePeriod(h,m,s);
+            Assert.AreEqual(expectedString, t.ToString());
+        }
 
         #endregion
 
         #region Equals
 
         [TestMethod, TestCategory("Equals Time")]
-        [DataRow(2, 50, 20, 2, 50, 20)]
-        [DataRow(12, 32, 02, 12, 32, 02)]
-        [DataRow(22, 01, 23, 22, 01, 23)]
-        [DataRow(9, 12, 52, 9, 12, 52)]
-        public void CheckIfBothTimeAreEqual(int hour, int minute, int second, int hour2, int minute2, int second2)
+        [DataRow((byte)2, (byte)50,(byte) 20,(byte) 2,(byte) 50, (byte)20)]
+        [DataRow((byte)12, (byte)32,(byte) 02, (byte)12, (byte)32,(byte) 02)]
+        [DataRow((byte)22, (byte)01,(byte) 23,(byte) 22,(byte) 01,(byte) 23)]
+        [DataRow((byte)9, (byte)12, (byte)52,(byte) 9, (byte)12,(byte) 52)]
+        public void CheckIfBothTimeAreEqual(byte hour, byte minute, byte second, byte hour2, byte minute2, byte second2)
         {
-            Time t1 = new Time((byte) hour, (byte)minute,(byte) second);
-            Time t2 = new Time((byte)hour2, (byte)minute2, (byte)second2);
+            Time t1 = new Time( hour, minute, second);
+            Time t2 = new Time(hour2, minute2, second2);
             Assert.AreEqual(true, t1 == t2);
         }
         [TestMethod, TestCategory("Equals TimePeriod")]
-        [DataRow(22, 12, 2, 22, 12, 2)]
-        [DataRow(13, 1, 56, 13, 1, 56)]
-        [DataRow(1, 16, 23, 1, 16, 23)]
-        [DataRow(9, 11, 52, 9, 11, 52)]
-        public void CheckIfBothTimeAreEqualForTimePeriod(int hour, int minute, int second, int hour2, int minute2, int second2)
+        [DataRow((ulong)22, (byte)12,(byte) 2, (ulong)22,(byte) 12,(byte) 2)]
+        [DataRow((ulong)13, (byte)1, (byte)56,(ulong) 13, (byte)1, (byte)56)]
+        [DataRow((ulong)1, (byte)16,(byte) 23,(ulong) 1, (byte)16,(byte) 23)]
+        [DataRow((ulong)9, (byte)11,(byte) 52,(ulong) 9, (byte)11,(byte) 52)]
+        public void CheckIfBothTimeAreEqualForTimePeriod(ulong hour, byte minute, byte second, ulong hour2, byte minute2, byte second2)
         {
-            TimePeriod t1 = new TimePeriod((ulong) hour, (byte)minute,(byte) second);
-            TimePeriod t2 = new TimePeriod((ulong)hour2, (byte)minute2, (byte)second2);
+            TimePeriod t1 = new TimePeriod( hour, minute, second);
+            TimePeriod t2 = new TimePeriod(hour2, minute2, second2);
             Assert.AreEqual(true, t1 == t2);
         }
 
