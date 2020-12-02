@@ -36,6 +36,11 @@ namespace Time_TimePeriod
             return true;
         }
 
+        public override bool Equals(object? obj)
+        {
+            return base.Equals(obj);
+        }
+
         public int CompareTo(Time other)
         {
             if (Hours - other.Hours != 0) return Hours - other.Hours;
@@ -44,20 +49,40 @@ namespace Time_TimePeriod
             return 0;
         }
 
+        
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(Hours, Minutes, Seconds);
+        }
+
         public static bool operator == (Time t1, Time t2) => t1.Equals(t2);
         public static bool operator != (Time t1, Time t2) => !(t1 == t2);
         public static bool operator > (Time t1, Time t2) => t1.CompareTo(t2) > 0;
         public static bool operator >= (Time t1, Time t2) => t1.CompareTo(t2) >= 0;
         public static bool operator < (Time t1, Time t2) => t1.CompareTo(t2) < 0;
         public static bool operator <= (Time t1, Time t2) => t1.CompareTo(t2) <= 0;
+        public static Time operator +(Time a, TimePeriod b) => a.TimePlus(b);
 
         public Time TimePlus(TimePeriod timePeriod)
         {
-            var 
+            var seconds = Hours * 3600 + Minutes * 60 + Seconds + timePeriod.Seconds;
+            var h =(byte) (seconds / 3600 > 23 ? seconds / 3600 % 24 : seconds / 3600);
+            var m =(byte) (seconds / 60 % 60);
+            var s = (byte)(seconds % 60);
+            return new Time(h, m, s);
         }
         public static Time TimePlus(TimePeriod timePeriod, Time time)
         {
-            
+            var seconds = ConvertToSeconds(time) + timePeriod.Seconds;
+            var h = ( byte) (seconds / 3600 > 23 ? seconds / 3600 % 24 : seconds / 3600);
+            var m = (byte) (seconds / 60 % 60);
+            var s = (byte) (seconds % 60);
+            return new Time(h, m, s);
+        }
+
+        private static long ConvertToSeconds(Time time)
+        {
+            return time.Hours * 3600 + time.Minutes * 60 + time.Seconds;
         }
     }
 }
