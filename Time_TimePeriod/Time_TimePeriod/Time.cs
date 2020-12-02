@@ -2,10 +2,22 @@
 
 namespace Time_TimePeriod
 {
+    /// <summary>
+    /// Struktura typu Time opisująca punkt w czasie
+    /// </summary>
     public struct Time: IEquatable<Time>, IComparable<Time>
     {
+        /// <summary>
+        ///  wewnętrzna reprezentacja czasu w godzinach (typ byte)
+        /// </summary>
         public byte Hours { get; }
+        /// <summary>
+        ///  wewnętrzna reprezentacja czasu w minutach (typ byte)
+        /// </summary>
         public byte Minutes { get; }
+        /// <summary>
+        ///  wewnętrzna reprezentacja czasu w sekundach (typ byte)
+        /// </summary>
         public byte Seconds { get; }
 
         public Time(byte hour, byte minute = 0, byte second = 0)

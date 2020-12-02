@@ -2,10 +2,16 @@
 
 namespace Time_TimePeriod
 {
+    /// <summary>
+    /// Struktura typu TimePeriod reprezentująca długość odcinka w czasie
+    /// </summary>
     public struct TimePeriod: IEquatable<TimePeriod>, IComparable<TimePeriod>
     {
-        private long seconds;
+        private readonly long seconds;
 
+        /// <summary>
+        /// wewnętrzna realizacja czasu trwania w sekundach (typ long)
+        /// </summary>
         public long Seconds => seconds;
 
         public TimePeriod(ulong hour, byte minute, byte second = 0)
@@ -47,7 +53,7 @@ namespace Time_TimePeriod
         }
         public override string ToString()
         {
-            return $"{Seconds / 3600}:{(Seconds / 60) % 60}:00{Seconds % 60:00}";
+            return $"{Seconds / 3600}:{(Seconds / 60) % 60:00}:{Seconds % 60:00}";
         }
 
         public bool Equals(TimePeriod other)
@@ -57,7 +63,7 @@ namespace Time_TimePeriod
 
         public override bool Equals(object? obj)
         {
-            return obj is TimePeriod other && Equals(other);
+            return false;
         }
 
         public override int GetHashCode()

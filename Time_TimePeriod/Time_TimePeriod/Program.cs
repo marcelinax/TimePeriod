@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Cryptography;
 
 namespace Time_TimePeriod
 {
@@ -6,7 +7,22 @@ namespace Time_TimePeriod
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var time = new Time(3,50,25);
+            var time2 = new Time("09:23:09");
+            var timePeriod = new TimePeriod(1290);
+            var timePeriod2 = new TimePeriod(12,34,20);
+            
+            
+            Console.WriteLine(time);
+            Console.WriteLine(time2);
+            Console.WriteLine(timePeriod);
+            Console.WriteLine(timePeriod2);
+            Console.WriteLine(timePeriod.TimePeriodPlus(timePeriod2));
+            Console.WriteLine(time.TimePlus(timePeriod));
+            Console.WriteLine(time.Equals(time2));
+            Console.WriteLine(time > time2);
+            Console.WriteLine(timePeriod2.Equals(timePeriod));
+            Console.WriteLine(timePeriod2 > timePeriod);
         }
     }
 }
