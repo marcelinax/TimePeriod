@@ -15,7 +15,11 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
-        "projectReferences": {}
+        "projectReferences": {
+          "D:\\Studia\\Programowanie obiektowe - lab\\Time\\Time_TimePeriod\\Time_TimePeriod\\Time_TimePeriod.csproj": {
+            "projectPath": "D:\\Studia\\Programowanie obiektowe - lab\\Time\\Time_TimePeriod\\Time_TimePeriod\\Time_TimePeriod.csproj"
+          }
+        }
       }
     },
     "warningProperties": {

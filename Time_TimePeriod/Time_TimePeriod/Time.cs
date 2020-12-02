@@ -74,6 +74,7 @@ namespace Time_TimePeriod
         public static bool operator < (Time t1, Time t2) => t1.CompareTo(t2) < 0;
         public static bool operator <= (Time t1, Time t2) => t1.CompareTo(t2) <= 0;
         public static Time operator +(Time a, TimePeriod b) => a.TimePlus(b);
+        
 
         public Time TimePlus(TimePeriod timePeriod)
         {
