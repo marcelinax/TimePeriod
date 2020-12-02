@@ -41,30 +41,30 @@ namespace Time_TimePeriodUnitTests
             Assert.AreEqual(0, t.Seconds);
         }
         [TestMethod, TestCategory("Time Constructors")]
-        [DataRow(12, 12)]
-        [DataRow(9, 9)]
-        [DataRow(15, 15)]
-        public void ConstructorWith2DefaultParams(int h, int expectedH){
-            Time t = new Time((byte)h);
-            AssertTime(t,(byte) expectedH, 0, 0);
+        [DataRow((byte)12, (byte)12)]
+        [DataRow((byte)9, (byte)9)]
+        [DataRow((byte)15, (byte)15)]
+        public void ConstructorWith2DefaultParams(byte h, byte expectedH){
+            Time t = new Time(h);
+            AssertTime(t, expectedH, 0, 0);
         }
         [TestMethod, TestCategory("Time Constructors")]
-        [DataRow(12, 43,12,43)]
-        [DataRow(9, 57, 9,57)]
-        [DataRow(15,13, 15, 13)]
-        public void ConstructorWithDefaultParam(int h, int m, int expectedH,  int expectedM){
-            Time t = new Time((byte)h, (byte) m);
-            AssertTime(t,(byte) expectedH, (byte)expectedM, 0);
+        [DataRow((byte)12, (byte)43,(byte)12,(byte)43)]
+        [DataRow((byte)9, (byte)57,(byte) 9,(byte)57)]
+        [DataRow((byte)15,(byte)13, (byte)15,(byte) 13)]
+        public void ConstructorWithDefaultParam(byte h, byte m, byte expectedH,  byte expectedM){
+            Time t = new Time(h,  m);
+            AssertTime(t, expectedH, expectedM, 0);
         }
 
         [TestMethod, TestCategory("Time Constructors")]
-        [DataRow(11, 22,9,11, 22,9)]
-        [DataRow(1, 2, 3,1, 2, 3)]
-        [DataRow(18,13, 2, 18,13, 2)]
-        public void ConstructorWith3Params(int h, int m, int s,int expectedH, int expecetedM, int expecetedS)
+        [DataRow((byte)11, (byte)22,(byte)9,(byte)11, (byte)22,(byte)9)]
+        [DataRow((byte)1, (byte)2, (byte)3,(byte)1,(byte) 2,(byte) 3)]
+        [DataRow((byte)18,(byte)13,(byte) 2,(byte) 18,(byte)13,(byte) 2)]
+        public void ConstructorWith3Params(byte h, byte m, byte s,byte expectedH, byte expecetedM, byte expecetedS)
         {
-            Time t = new Time((byte)h,(byte)m,(byte)s);
-            AssertTime(t,(byte)expectedH, (byte)expecetedM,(byte)expecetedS);
+            Time t = new Time(h,m,s);
+            AssertTime(t,expectedH, expecetedM,expecetedS);
         }
         #endregion
 
@@ -75,14 +75,14 @@ namespace Time_TimePeriodUnitTests
             TimePeriod t = new TimePeriod();
             Assert.AreEqual(0, t.Seconds);
         }
-        /*[TestMethod, TestCategory("TimePeriod Constructors")]
-        [DataRow(1, 34,1, 34)]
-        [DataRow(9, 56, 9,56)]
-        [DataRow(15,15, 15,15)]
-        public void ConstructorWithDefaultParamForTimePeriod(ulong h, int m, ulong expectedH, int expectedM){
-            Time t = new Time((byte) h, (byte) m);
-            AssertTime(t, (byte) expectedH, (byte) expectedM, 0);
-        }*/
+        [TestMethod, TestCategory("TimePeriod Constructors")]
+        [DataRow((ulong)1, (byte)34,(ulong)1, (byte)34)]
+        [DataRow((ulong)9, (byte)56,(ulong) 9,(byte)56)]
+        [DataRow((ulong)15,(byte)15,(ulong) 15,(byte)15)]
+        public void ConstructorWithDefaultParamForTimePeriod(ulong h, byte m, ulong expectedH, byte expectedM){
+            TimePeriod time = new TimePeriod( h, m);
+            AssertTime(time,  expectedH,  expectedM, 0);
+        }
         
 
         #endregion
@@ -138,11 +138,11 @@ namespace Time_TimePeriodUnitTests
         #region PlusMetod
 
         [TestMethod, TestCategory("Plus operator")]
-        [DataRow(5, 50, 20, 1, 9, 40)]
-        public void CheckOperatorPlusingTime(int hour, int minute, int second, int hour2, int minute2, int second2)
+        [DataRow((ulong)5, 50, 20, (ulong)1, 9, 40)]
+        public void CheckOperatorPlusingTime(ulong hour, int minute, int second, ulong hour2, int minute2, int second2)
         {
             Time t1 = new Time((byte) hour, (byte)minute,(byte) second);
-            TimePeriod t2 = new TimePeriod((byte)hour2, (byte)minute2, (byte)second2);
+            TimePeriod t2 = new TimePeriod(hour2, (byte)minute2, (byte)second2);
             Time t3 = t1 + t2;
             Assert.AreEqual( t1 + t2, t3 );
         }
