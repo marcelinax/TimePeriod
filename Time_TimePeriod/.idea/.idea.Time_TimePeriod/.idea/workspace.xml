@@ -24,7 +24,15 @@
   <component name="ChangeListManager">
     <list default="true" id="8604cc86-0dd0-469e-afbd-506ddff05293" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Time_TimePeriod/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Time_TimePeriod/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Time_TimePeriod/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Time_TimePeriod/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Time_TimePeriod/Time.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Time_TimePeriod/Time.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Time_TimePeriod/bin/Debug/netcoreapp3.1/Time_TimePeriod.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Time_TimePeriod/bin/Debug/netcoreapp3.1/Time_TimePeriod.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Time_TimePeriod/bin/Debug/netcoreapp3.1/Time_TimePeriod.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Time_TimePeriod/bin/Debug/netcoreapp3.1/Time_TimePeriod.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Time_TimePeriod/obj/Debug/netcoreapp3.1/Time_TimePeriod.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Time_TimePeriod/obj/Debug/netcoreapp3.1/Time_TimePeriod.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Time_TimePeriod/obj/Debug/netcoreapp3.1/Time_TimePeriod.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Time_TimePeriod/obj/Debug/netcoreapp3.1/Time_TimePeriod.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Time_TimePeriodUnitTests/Time_TimePeriodUnitTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Time_TimePeriodUnitTests/Time_TimePeriodUnitTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Time_TimePeriodUnitTests/bin/Debug/netcoreapp3.1/Time_TimePeriod.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Time_TimePeriodUnitTests/bin/Debug/netcoreapp3.1/Time_TimePeriod.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Time_TimePeriodUnitTests/bin/Debug/netcoreapp3.1/Time_TimePeriod.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Time_TimePeriodUnitTests/bin/Debug/netcoreapp3.1/Time_TimePeriod.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Time_TimePeriodUnitTests/bin/Debug/netcoreapp3.1/Time_TimePeriodUnitTests.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Time_TimePeriodUnitTests/bin/Debug/netcoreapp3.1/Time_TimePeriodUnitTests.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Time_TimePeriodUnitTests/bin/Debug/netcoreapp3.1/Time_TimePeriodUnitTests.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Time_TimePeriodUnitTests/bin/Debug/netcoreapp3.1/Time_TimePeriodUnitTests.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Time_TimePeriodUnitTests/obj/Debug/netcoreapp3.1/Time_TimePeriodUnitTests.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Time_TimePeriodUnitTests/obj/Debug/netcoreapp3.1/Time_TimePeriodUnitTests.csprojAssemblyReference.cache" afterDir="false" />
@@ -39,17 +47,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/../../Kopiarka/cs-lab04-Implementacje-interfejsow-implicit-explicit-kompozycja/Documents.cs" root0="SKIP_HIGHLIGHTING" />
-  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Time_TimePeriodUnitTests/UnitTest1.cs" />
-        <option value="$PROJECT_DIR$/Time_TimePeriod/Program.cs" />
-        <option value="$PROJECT_DIR$/Time_TimePeriod/TimePeriod.cs" />
         <option value="$PROJECT_DIR$/Time_TimePeriodUnitTests/TimePeriodUnitTests.cs" />
+        <option value="$PROJECT_DIR$/Time_TimePeriod/TimePeriod.cs" />
         <option value="$PROJECT_DIR$/Time_TimePeriod/Time.cs" />
+        <option value="$PROJECT_DIR$/Time_TimePeriod/Program.cs" />
         <option value="$PROJECT_DIR$/Time_TimePeriodUnitTests/Time_TimePeriodUnitTests.cs" />
       </list>
     </option>
@@ -104,7 +109,8 @@
       <workItem from="1606921387573" duration="9610000" />
       <workItem from="1606933269714" duration="3157000" />
       <workItem from="1607044769523" duration="4701000" />
-      <workItem from="1607050879771" duration="2335000" />
+      <workItem from="1607050879771" duration="5260000" />
+      <workItem from="1607068816342" duration="2990000" />
     </task>
     <servers />
   </component>
@@ -129,22 +135,22 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1877" height="375" key="GridCell.Tab.0.bottom" timestamp="1606932928901">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1607059505973">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="375" key="GridCell.Tab.0.bottom/-1920.188.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606932928901" />
-    <state width="1877" height="375" key="GridCell.Tab.0.center" timestamp="1606932928901">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/-1920.188.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1607059505973" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1607059505973">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="375" key="GridCell.Tab.0.center/-1920.188.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606932928901" />
-    <state width="1877" height="375" key="GridCell.Tab.0.left" timestamp="1606932928901">
+    <state width="1877" height="282" key="GridCell.Tab.0.center/-1920.188.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1607059505973" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1607059505973">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="375" key="GridCell.Tab.0.left/-1920.188.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606932928901" />
-    <state width="1877" height="375" key="GridCell.Tab.0.right" timestamp="1606932928901">
+    <state width="1877" height="282" key="GridCell.Tab.0.left/-1920.188.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1607059505973" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1607059505973">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="375" key="GridCell.Tab.0.right/-1920.188.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606932928901" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/-1920.188.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1607059505973" />
     <state width="1877" height="375" key="GridCell.Tab.1.bottom" timestamp="1606932928901">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -222,5 +228,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/-1920.188.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1606571805784" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1607069083776">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/-1920.188.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1607069083776" />
   </component>
 </project>

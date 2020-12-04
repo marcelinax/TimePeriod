@@ -26,6 +26,10 @@ namespace Time_TimePeriodUnitTests
             Assert.AreEqual(expectedHours, t.Hours);
             Assert.AreEqual(expectedMinutes, t.Minutes);
             Assert.AreEqual(expectedSeconds, t.Seconds);
+        } 
+        private void AssertTimePeriod(TimePeriod t ,long expectedSeconds)
+        {
+            Assert.AreEqual(expectedSeconds, t.Seconds);
         }
 
 
@@ -113,23 +117,46 @@ namespace Time_TimePeriodUnitTests
             TimePeriod t = new TimePeriod();
             Assert.AreEqual(0, t.Seconds);
         }
-        /*[TestMethod, TestCategory("TimePeriod Constructors")]
-        [DataRow((ulong)1, (byte)34,(ulong)1, (byte)34)]
-        [DataRow((ulong)9, (byte)56,(ulong) 9,(byte)56)]
-        [DataRow((ulong)15,(byte)15,(ulong) 15,(byte)15)]
-        public void ConstructorWithDefaultParamForTimePeriod(ulong h, byte m, ulong expectedH, byte expectedM){
-            TimePeriod timePeriod = new TimePeriod( h, m);
-            AssertTime(timePeriod,  expectedH,  expectedM, 0);
-        }*//*
+
         [TestMethod, TestCategory("TimePeriod Constructors")]
-        public void ConstructorWithTwoTime(byte h, byte m, byte s, byte h2, byte m2, byte s2, long expectedH, byte expectedM, byte expectedS)
+        [DataRow((long) 2423,(long) 2423)]
+        [DataRow((long) 1200,(long) 1200)]
+        [DataRow((long) 6000,(long) 6000)]
+       
+        public void ConstructorWithSeconds(long s, long expectedS)
         {
-            Time t1 = new Time(h,m,s);
+            TimePeriod t = new TimePeriod(s);
+            AssertTimePeriod(t, expectedS);
+            
+        }
+        [TestMethod, TestCategory("TimePeriod Constructors")]
+        [DataRow("1:02:09",(long)3729)]
+        [DataRow("22:43:12",(long)81792)]
+        [DataRow("123:02:10",(long)442930)]
+       
+        public void StringConstructorTimePeriod(string t, long s)
+        {
+            TimePeriod timePeriodToString = new TimePeriod(t);
+            AssertTimePeriod(timePeriodToString,s);
+        }
+
+        /*[TestMethod, TestCategory("TimePeriod Constructors")]
+        public void ConstructorWithTwoTime(byte h, byte m, byte s, byte h2, byte m2, byte s2, long s3)
+        {
+            Time t = new Time(h,m,s);
             Time t2 = new Time(h2,m2,s2);
-            TimePeriod t3 = new TimePeriod(t2-t1);
-            AssertTime();
+            TimePeriod t3 = new TimePeriod(s3);
+            AssertTimePeriod(t3, t2-t);
         }*/
         
+        /*
+        public void ConstructorWithDefaultParamForTimePeriod(ulong h, byte m, long expectedS)
+        {
+            TimePeriod t = new TimePeriod(h,m);
+            AssertTimePeriod(t, expectedS);
+        }
+        */
+      
 
         #endregion
         #endregion
@@ -302,6 +329,29 @@ namespace Time_TimePeriodUnitTests
             TimePeriod t2 = new TimePeriod(h, m, s);
             Time t3 = new Time(expectedH, expectedM, expectedS);
             Assert.AreEqual( t1+t2, t3 );
+        }
+        [TestMethod, TestCategory("Plus operator")]
+        [DataRow((byte) 3, (byte) 10, (byte) 10,(long) 3600, (byte) 4,(byte) 10, (byte)10)]
+        [DataRow((byte) 5, (byte) 22, (byte) 12,(long) 6524, (byte) 7,(byte) 10, (byte)56)]
+        [DataRow((byte) 13, (byte) 2, (byte) 56,(long) 8200, (byte) 15,(byte) 19, (byte)36)]
+        public void CheckOperatorPlusingTimeAndTimePeriod(byte h, byte m, byte s, long s2, byte expectedH, byte expectedM, byte expectedS)
+        {
+            Time t1 = new Time(h,m,s);
+            TimePeriod t2 = new TimePeriod(s2);
+            Time t3 = new Time(expectedH, expectedM, expectedS);
+            Assert.AreEqual( t1+t2, t3 );
+        }
+
+        [TestMethod, TestCategory("Plus operator")]
+        [DataRow((long) 2000, (long) 1000, (long) 3000)]
+        [DataRow((long) 3600, (long) 1234, (long) 4834)]
+        [DataRow((long) 2000, (long) 52322, (long) 54322)]
+        public void CheckOperatorPlusingTimePeriod(long s, long s2, long expectedS)
+        {
+            TimePeriod t = new TimePeriod(s);
+            TimePeriod t2 = new TimePeriod(s2);
+            TimePeriod t3 = new TimePeriod(expectedS);
+            AssertTimePeriod(t+t2, t3.Seconds);
         }
 
 

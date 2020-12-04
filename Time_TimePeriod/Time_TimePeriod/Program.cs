@@ -23,6 +23,7 @@ namespace Time_TimePeriod
             Console.WriteLine(time > time2);
             Console.WriteLine(timePeriod2.Equals(timePeriod));
             Console.WriteLine(timePeriod2 > timePeriod);
+            
         }
     }
 }
