@@ -140,24 +140,53 @@ namespace Time_TimePeriodUnitTests
             AssertTimePeriod(timePeriodToString,s);
         }
 
-        /*[TestMethod, TestCategory("TimePeriod Constructors")]
+        [TestMethod, TestCategory("TimePeriod Constructors")]
+        [DataRow((byte) 0, (byte) 10, (byte) 10,(byte) 0, (byte) 20, (byte) 10, (long) 600)]
+        [DataRow((byte) 12, (byte) 52, (byte) 2,(byte) 15, (byte) 2, (byte) 50, (long) 7848)]
+        [DataRow((byte) 23, (byte) 31, (byte) 22,(byte) 13, (byte) 42, (byte) 2, (long) 51040)]
         public void ConstructorWithTwoTime(byte h, byte m, byte s, byte h2, byte m2, byte s2, long s3)
         {
             Time t = new Time(h,m,s);
             Time t2 = new Time(h2,m2,s2);
-            TimePeriod t3 = new TimePeriod(s3);
-            AssertTimePeriod(t3, t2-t);
-        }*/
-        
-        /*
+            TimePeriod t3 = new TimePeriod(t,t2);
+            AssertTimePeriod(t3, s3);
+        }
+        [TestMethod, TestCategory("TimePeriod Constructors")]
+        [DataRow((ulong) 12, (byte) 10, (long) 43800)]
+        [DataRow((ulong) 9, (byte) 52, (long) 35520)]
+        [DataRow((ulong) 22, (byte) 12, (long) 79920)]
         public void ConstructorWithDefaultParamForTimePeriod(ulong h, byte m, long expectedS)
         {
-            TimePeriod t = new TimePeriod(h,m);
+            TimePeriod t = new TimePeriod(h,m,0);
             AssertTimePeriod(t, expectedS);
         }
-        */
-      
-
+        [TestMethod, TestCategory("TimePeriod Constructors")]
+        [DataRow((ulong) 1, (byte) 10, (byte) 10, (long) 4210)]
+        [DataRow((ulong) 15, (byte) 42, (byte) 2, (long) 56522)]
+        [DataRow((ulong) 10, (byte) 50, (byte) 32, (long) 39032)]
+        public void ConstructorWith3ParamsForTimePeriod(ulong h, byte m, byte s, long expectedS)
+        {
+            TimePeriod t = new TimePeriod(h,m,s);
+            AssertTimePeriod(t, expectedS);
+        }
+        [DataTestMethod, TestCategory("TimePeriod Constructors")]
+        [DataRow((ulong)24, (byte) 60)]
+        [DataRow((ulong)25,(byte) 67)]
+        [DataRow((ulong)30,(byte) 80)]
+        [ExpectedException(typeof(ArgumentException))]
+        public void ConstructorWithDefaultParamForTimePeriodArgumentException(ulong h, byte m)
+        {
+            TimePeriod t = new TimePeriod(h,m,0);
+        }
+        [DataTestMethod, TestCategory("TimePeriod Constructors")]
+        [DataRow((ulong)24, (byte) 60,(byte) 60)]
+        [DataRow((ulong)25,(byte) 67,(byte) 90)]
+        [DataRow((ulong)30,(byte) 80,(byte) 86)]
+        [ExpectedException(typeof(ArgumentException))]
+        public void ConstructorWith3ParamsForTimePeriodArgumentException(ulong h, byte m, byte s)
+        {
+            TimePeriod t = new TimePeriod(h,m,s);
+        }
         #endregion
         #endregion
 

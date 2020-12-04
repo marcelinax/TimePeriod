@@ -100,9 +100,9 @@ namespace Time_TimePeriod
             return new Time(h, m, s);
         }
 
-        public Time TimeMinus(Time t1, Time t2)
+        public static Time TimeMinus(Time t1, Time t2)
         {
-            var seconds = ConvertToSeconds(t1) + ConvertToSeconds(t2);
+            var seconds = ConvertToSeconds(t1) - ConvertToSeconds(t2);
             var h =(byte) (seconds / 3600 > 23 ? seconds / 3600 % 24 : seconds / 3600);
             var m =(byte) (seconds / 60 % 60);
             var s = (byte)(seconds % 60);
