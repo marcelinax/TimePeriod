@@ -22,7 +22,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8604cc86-0dd0-469e-afbd-506ddff05293" name="Default Changelist" comment="" />
+    <list default="true" id="8604cc86-0dd0-469e-afbd-506ddff05293" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Time_TimePeriod/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Time_TimePeriod/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Time_TimePeriodUnitTests/Time_TimePeriodUnitTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Time_TimePeriodUnitTests/Time_TimePeriodUnitTests.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Time_TimePeriodUnitTests/bin/Debug/netcoreapp3.1/Time_TimePeriodUnitTests.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Time_TimePeriodUnitTests/bin/Debug/netcoreapp3.1/Time_TimePeriodUnitTests.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Time_TimePeriodUnitTests/bin/Debug/netcoreapp3.1/Time_TimePeriodUnitTests.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Time_TimePeriodUnitTests/bin/Debug/netcoreapp3.1/Time_TimePeriodUnitTests.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Time_TimePeriodUnitTests/obj/Debug/netcoreapp3.1/Time_TimePeriodUnitTests.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Time_TimePeriodUnitTests/obj/Debug/netcoreapp3.1/Time_TimePeriodUnitTests.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Time_TimePeriodUnitTests/obj/Debug/netcoreapp3.1/Time_TimePeriodUnitTests.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Time_TimePeriodUnitTests/obj/Debug/netcoreapp3.1/Time_TimePeriodUnitTests.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Time_TimePeriodUnitTests/obj/Debug/netcoreapp3.1/Time_TimePeriodUnitTests.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Time_TimePeriodUnitTests/obj/Debug/netcoreapp3.1/Time_TimePeriodUnitTests.pdb" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -95,7 +103,8 @@
       <workItem from="1606841259640" duration="16109000" />
       <workItem from="1606921387573" duration="9610000" />
       <workItem from="1606933269714" duration="3157000" />
-      <workItem from="1607044769523" duration="4575000" />
+      <workItem from="1607044769523" duration="4701000" />
+      <workItem from="1607050879771" duration="2335000" />
     </task>
     <servers />
   </component>

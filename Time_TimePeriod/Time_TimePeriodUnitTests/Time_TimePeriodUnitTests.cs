@@ -75,6 +75,35 @@ namespace Time_TimePeriodUnitTests
             Time timeToString = new Time(t);
             AssertTime(timeToString,h,m,s);
         }
+
+        [DataTestMethod, TestCategory("Time Constructors")]
+        [DataRow( (byte)24)]
+        [DataRow((byte)25)]
+        [DataRow((byte)30)]
+        [ExpectedException(typeof(ArgumentException))]
+        public void ConstructorWith2DefaultParamsArgumentException(byte h)
+        {
+            Time t = new Time(h);
+        }
+
+        [DataTestMethod, TestCategory("Time Constructors")]
+        [DataRow((byte) 24,(byte) 60)]
+        [DataRow((byte) 25, (byte) 72)]
+        [DataRow((byte) 30, (byte) 63)]
+        [ExpectedException(typeof(ArgumentException))]
+        public void ConstructorWithDefaultParamArgumentException(byte h, byte m)
+        {
+            Time t = new Time(h,m);
+        }
+        [DataTestMethod, TestCategory("Time Constructors")]
+        [DataRow((byte) 24,(byte) 60, (byte) 79)]
+        [DataRow((byte) 28, (byte) 72, (byte)60)]
+        [DataRow((byte) 35, (byte) 63, (byte)63)]
+        [ExpectedException(typeof(ArgumentException))]
+        public void ConstructorWith3ParamsArgumentException(byte h, byte m, byte s)
+        {
+            Time t = new Time(h,m,s);
+        }
         #endregion
 
         #region TimePeriod
