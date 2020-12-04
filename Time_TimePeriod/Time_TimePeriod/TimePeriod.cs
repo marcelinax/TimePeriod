@@ -41,6 +41,10 @@ namespace Time_TimePeriod
         {
             return new TimePeriod(seconds + timePeriod.seconds);
         }
+        public TimePeriod TimePeriodMinus(TimePeriod timePeriod)
+        {
+            return new TimePeriod(seconds - timePeriod.seconds);
+        }
 
         public TimePeriod(string timePeriod)
         {
@@ -87,6 +91,7 @@ namespace Time_TimePeriod
         public static bool operator < (TimePeriod t1, TimePeriod t2) => t1.CompareTo(t2) < 0;
         public static bool operator <= (TimePeriod t1, TimePeriod t2) => t1.CompareTo(t2) <= 0;
         public static TimePeriod operator +(TimePeriod a , TimePeriod b) => a.TimePeriodPlus(b);
+        public static TimePeriod operator -(TimePeriod a, TimePeriod b) => a-b;
        
     }
 }
