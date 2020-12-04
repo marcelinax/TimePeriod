@@ -161,7 +161,7 @@ namespace Time_TimePeriodUnitTests
         [DataRow((ulong)13, (byte)1, (byte)56,(ulong) 13, (byte)1, (byte)56)]
         [DataRow((ulong)1, (byte)16,(byte) 23,(ulong) 1, (byte)16,(byte) 23)]
         [DataRow((ulong)9, (byte)11,(byte) 52,(ulong) 9, (byte)11,(byte) 52)]
-        public void CheckIfBothTimeAreEqualForTimePeriod(ulong hour, byte minute, byte second, ulong hour2, byte minute2, byte second2)
+        public void CheckIfBothTimePeriodAreEqual(ulong hour, byte minute, byte second, ulong hour2, byte minute2, byte second2)
         {
             TimePeriod t1 = new TimePeriod( hour, minute, second);
             TimePeriod t2 = new TimePeriod(hour2, minute2, second2);
