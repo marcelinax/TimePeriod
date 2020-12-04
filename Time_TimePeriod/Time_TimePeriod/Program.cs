@@ -7,11 +7,11 @@ namespace Time_TimePeriod
     {
         static void Main(string[] args)
         {
-            var time = new Time(3,50,25);
+            var time = new Time(13,20,20);
             var time2 = new Time("09:23:09");
             var time3 = new Time(15,50,25);
             var timePeriod = new TimePeriod(1290);
-            var timePeriod2 = new TimePeriod(12,6,40);
+            var timePeriod2 = new TimePeriod(14,30,30);
             var timePeriod3 = new TimePeriod(time3,time2);
             var timePeriod4 = new TimePeriod(3,6,20);
             

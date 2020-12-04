@@ -39,11 +39,17 @@ namespace Time_TimePeriod
 
         public TimePeriod TimePeriodPlus(TimePeriod timePeriod)
         {
+            
             return new TimePeriod(seconds + timePeriod.seconds);
         }
         public TimePeriod TimePeriodMinus(TimePeriod timePeriod)
         {
-            return new TimePeriod(seconds - timePeriod.seconds);
+            if (seconds > timePeriod.seconds)
+            {
+                return new TimePeriod(seconds - timePeriod.seconds);
+            }
+            return new TimePeriod(timePeriod.seconds - seconds);
+            
         }
 
         public TimePeriod(string timePeriod)

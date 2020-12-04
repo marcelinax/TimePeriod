@@ -385,5 +385,30 @@ namespace Time_TimePeriodUnitTests
 
 
         #endregion
+
+        #region MinusMetod
+
+        [TestMethod, TestCategory("Minus operator")]
+        [DataRow((byte) 15, (byte) 20, (byte) 20,(ulong) 14, (byte) 30, (byte) 30,(byte) 22, (byte)49, (byte)50)]
+        
+        public void CheckOperatorMinusTime(byte h, byte m, byte s, ulong h2, byte m2, byte s2, byte expectedH, byte expectedM, byte expectedS)
+        {
+            Time t1 = new Time(h,m,s);
+            TimePeriod t2 = new TimePeriod(h2, m2, s2);
+            Time t3 = new Time(expectedH, expectedM, expectedS);
+            Assert.AreEqual( t1-t2, t3 );
+        }
+        [TestMethod, TestCategory("Minus operator")]
+        [DataRow((byte) 3, (byte) 10, (byte) 10,(long) 3600, (byte) 2,(byte) 10, (byte)10)]
+        
+      
+        public void OperatorMinusTimeAndTimePeriod(byte h, byte m, byte s, long s2, byte expectedH, byte expectedM, byte expectedS)
+        {
+            Time t1 = new Time(h,m,s);
+            TimePeriod t2 = new TimePeriod(s2);
+            Time t3 = new Time(expectedH, expectedM, expectedS);
+            Assert.AreEqual( t1-t2, t3 );
+        }
+        #endregion
     }
 }
