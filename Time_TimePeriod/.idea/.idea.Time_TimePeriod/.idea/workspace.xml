@@ -27,6 +27,7 @@
       <change beforePath="$PROJECT_DIR$/Time_TimePeriodUnitTests/Time_TimePeriodUnitTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Time_TimePeriodUnitTests/Time_TimePeriodUnitTests.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Time_TimePeriodUnitTests/bin/Debug/netcoreapp3.1/Time_TimePeriodUnitTests.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Time_TimePeriodUnitTests/bin/Debug/netcoreapp3.1/Time_TimePeriodUnitTests.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Time_TimePeriodUnitTests/bin/Debug/netcoreapp3.1/Time_TimePeriodUnitTests.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Time_TimePeriodUnitTests/bin/Debug/netcoreapp3.1/Time_TimePeriodUnitTests.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Time_TimePeriodUnitTests/obj/Debug/netcoreapp3.1/Time_TimePeriodUnitTests.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Time_TimePeriodUnitTests/obj/Debug/netcoreapp3.1/Time_TimePeriodUnitTests.csprojAssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Time_TimePeriodUnitTests/obj/Debug/netcoreapp3.1/Time_TimePeriodUnitTests.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Time_TimePeriodUnitTests/obj/Debug/netcoreapp3.1/Time_TimePeriodUnitTests.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Time_TimePeriodUnitTests/obj/Debug/netcoreapp3.1/Time_TimePeriodUnitTests.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Time_TimePeriodUnitTests/obj/Debug/netcoreapp3.1/Time_TimePeriodUnitTests.pdb" afterDir="false" />
     </list>
@@ -101,7 +102,8 @@
       <workItem from="1606731743363" duration="575000" />
       <workItem from="1606841259640" duration="16109000" />
       <workItem from="1606921387573" duration="9610000" />
-      <workItem from="1606933269714" duration="3028000" />
+      <workItem from="1606933269714" duration="3157000" />
+      <workItem from="1607044769523" duration="4012000" />
     </task>
     <servers />
   </component>

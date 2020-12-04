@@ -78,19 +78,27 @@ namespace Time_TimePeriodUnitTests
         #endregion
 
         #region TimePeriod
-        /*[TestMethod, TestCategory("TimePeriod Constructors")]
+        [TestMethod, TestCategory("TimePeriod Constructors")]
         public void DefaultConstructorForTimePeriod()
         {
             TimePeriod t = new TimePeriod();
             Assert.AreEqual(0, t.Seconds);
         }
-        [TestMethod, TestCategory("TimePeriod Constructors")]
+        /*[TestMethod, TestCategory("TimePeriod Constructors")]
         [DataRow((ulong)1, (byte)34,(ulong)1, (byte)34)]
         [DataRow((ulong)9, (byte)56,(ulong) 9,(byte)56)]
         [DataRow((ulong)15,(byte)15,(ulong) 15,(byte)15)]
         public void ConstructorWithDefaultParamForTimePeriod(ulong h, byte m, ulong expectedH, byte expectedM){
-            TimePeriod time = new TimePeriod( h, m);
-            AssertTime(time,  expectedH,  expectedM, 0);
+            TimePeriod timePeriod = new TimePeriod( h, m);
+            AssertTime(timePeriod,  expectedH,  expectedM, 0);
+        }*//*
+        [TestMethod, TestCategory("TimePeriod Constructors")]
+        public void ConstructorWithTwoTime(byte h, byte m, byte s, byte h2, byte m2, byte s2, long expectedH, byte expectedM, byte expectedS)
+        {
+            Time t1 = new Time(h,m,s);
+            Time t2 = new Time(h2,m2,s2);
+            TimePeriod t3 = new TimePeriod(t2-t1);
+            AssertTime();
         }*/
         
 
@@ -163,29 +171,108 @@ namespace Time_TimePeriodUnitTests
         #endregion
 
         #region CompareTo
-
-        [TestMethod, TestCategory("CompareTo")]
-        [DataRow(2, 50, 20, 3, 50, 20)]
-        public void CompareTwoTime(int hour, int minute, int second, int hour2, int minute2, int second2)
+        #region Time
+        [TestMethod, TestCategory("CompareTo Time")]
+        [DataRow((byte)2, (byte)50,(byte) 20,(byte) 3,(byte) 50,(byte) 20)]
+        [DataRow((byte)5, (byte)20,(byte) 32,(byte) 13,(byte) 1,(byte) 20)]
+        [DataRow((byte)22, (byte)10,(byte) 12,(byte) 22,(byte) 10,(byte) 20)]
+        public void TimeSmallerThanOtherTime(byte h, byte m, byte s, byte h2, byte m2, byte s2)
         {
-            Time t1 = new Time((byte) hour, (byte)minute,(byte) second);
-            Time t2 = new Time((byte)hour2, (byte)minute2, (byte)second2);
+            Time t1 = new Time( h, m, s);
+            Time t2 = new Time(h2, m2, s2);
             Assert.AreEqual(true, t1 < t2);
         }
+        [TestMethod, TestCategory("CompareTo Time")]
+        [DataRow((byte)15, (byte)50,(byte) 20,(byte) 13,(byte) 50,(byte) 20)]
+        [DataRow((byte)5, (byte)13,(byte) 32,(byte) 1,(byte) 12,(byte) 20)]
+        [DataRow((byte)22, (byte)32,(byte) 44,(byte) 22,(byte) 10,(byte) 20)]
+        public void TimeGreaterThanOtherTime(byte h, byte m, byte s, byte h2, byte m2, byte s2)
+        {
+            Time t1 = new Time( h, m, s);
+            Time t2 = new Time(h2, m2, s2);
+            Assert.AreEqual(true, t1 > t2);
+        }
+        [TestMethod, TestCategory("CompareTo Time")]
+        [DataRow((byte)2, (byte)50,(byte) 20,(byte) 2,(byte) 50,(byte) 20)]
+        [DataRow((byte)15, (byte)20,(byte) 32,(byte) 18,(byte) 1,(byte) 20)]
+        [DataRow((byte)9, (byte)32,(byte) 45,(byte) 9,(byte) 32,(byte) 45)]
+        public void TimeSmallerThanOrEqualOtherTime(byte h, byte m, byte s, byte h2, byte m2, byte s2)
+        {
+            Time t1 = new Time( h, m, s);
+            Time t2 = new Time(h2, m2, s2);
+            Assert.AreEqual(true, t1 <= t2);
+        }
+        [TestMethod, TestCategory("CompareTo Time")]
+        [DataRow((byte)2, (byte)52,(byte) 20,(byte) 2,(byte) 50,(byte) 20)]
+        [DataRow((byte)15, (byte)20,(byte) 32,(byte) 15,(byte) 20,(byte) 32)]
+        [DataRow((byte)9, (byte)32,(byte) 45,(byte) 5,(byte) 22,(byte) 13)]
+        public void TimeGreaterThanOrEqualOtherTime(byte h, byte m, byte s, byte h2, byte m2, byte s2)
+        {
+            Time t1 = new Time( h, m, s);
+            Time t2 = new Time(h2, m2, s2);
+            Assert.AreEqual(true, t1 >= t2);
+        }
+        #endregion
 
+        #region TimePeriod
+        [TestMethod, TestCategory("CompareTo TimePeriod")]
+        [DataRow((ulong)123, (byte)32,(byte) 20,(ulong) 123,(byte) 50,(byte) 20)]
+        [DataRow((ulong)15, (byte)20,(byte) 52,(ulong) 17,(byte) 1,(byte) 20)]
+        [DataRow((ulong)22, (byte)10,(byte) 12,(ulong) 32,(byte) 12,(byte) 54)]
+        public void TimePeriodSmallerThanOtherTimePeriod(ulong h, byte m, byte s, ulong h2, byte m2, byte s2)
+        {
+            TimePeriod t1 = new TimePeriod( h, m, s);
+            TimePeriod t2 = new TimePeriod(h2, m2, s2);
+            Assert.AreEqual(true, t1 < t2);
+        }
+        [TestMethod, TestCategory("CompareTo TimePeriod")]
+        [DataRow((ulong)24, (byte)12,(byte) 53,(ulong) 12,(byte) 50,(byte) 20)]
+        [DataRow((ulong)56, (byte)20,(byte) 52,(ulong) 54,(byte) 1,(byte) 1)]
+        [DataRow((ulong)22, (byte)10,(byte) 12,(ulong) 2,(byte) 12,(byte) 54)]
+        public void TimePeriodGreaterThanOtherTimePeriod(ulong h, byte m, byte s, ulong h2, byte m2, byte s2)
+        {
+            TimePeriod t1 = new TimePeriod( h, m, s);
+            TimePeriod t2 = new TimePeriod(h2, m2, s2);
+            Assert.AreEqual(true, t1 > t2);
+        }
+        [TestMethod, TestCategory("CompareTo TimePeriod")]
+        [DataRow((ulong)123, (byte)32,(byte) 20,(ulong) 123,(byte) 32,(byte) 20)]
+        [DataRow((ulong)32, (byte)12,(byte) 2,(ulong) 39,(byte) 1,(byte) 20)]
+        [DataRow((ulong)2, (byte)10,(byte) 12,(ulong) 2,(byte) 52,(byte) 54)]
+        public void TimePeriodSmallerThanOrEqualOtherTimePeriod(ulong h, byte m, byte s, ulong h2, byte m2, byte s2)
+        {
+            TimePeriod t1 = new TimePeriod( h, m, s);
+            TimePeriod t2 = new TimePeriod(h2, m2, s2);
+            Assert.AreEqual(true, t1 <= t2);
+        }
+        [TestMethod, TestCategory("CompareTo TimePeriod")]
+        [DataRow((ulong)123, (byte)32,(byte) 20,(ulong) 123,(byte) 32,(byte) 20)]
+        [DataRow((ulong)233, (byte)12,(byte) 2,(ulong) 123,(byte) 1,(byte) 20)]
+        [DataRow((ulong)42, (byte)10,(byte) 12,(ulong) 42,(byte) 2,(byte) 54)]
+        public void TimePeriodGreaterThanOrEqualOtherTimePeriod(ulong h, byte m, byte s, ulong h2, byte m2, byte s2)
+        {
+            TimePeriod t1 = new TimePeriod( h, m, s);
+            TimePeriod t2 = new TimePeriod(h2, m2, s2);
+            Assert.AreEqual(true, t1 >= t2);
+        }
+        
 
+        #endregion
         #endregion
 
         #region PlusMetod
 
         [TestMethod, TestCategory("Plus operator")]
-        [DataRow((ulong)5, 50, 20, (ulong)1, 9, 40)]
-        public void CheckOperatorPlusingTime(ulong hour, int minute, int second, ulong hour2, int minute2, int second2)
+        [DataRow((ulong) 3, (byte) 20, (byte) 20,(byte) 1, (byte) 10, (byte) 50,(byte) 4, (byte)31, (byte)10)]
+        [DataRow((ulong) 13, (byte) 12, (byte) 1,(byte) 5, (byte) 53, (byte) 12,(byte) 19, (byte)5, (byte)13)]
+        [DataRow((ulong) 15, (byte) 45, (byte) 23,(byte) 2, (byte) 12, (byte) 21,(byte) 17, (byte)57, (byte)44)]
+       
+        public void CheckOperatorPlusingTime(ulong h, byte m, byte s, byte h2, byte m2, byte s2, byte expectedH, byte expectedM, byte expectedS)
         {
-            Time t1 = new Time((byte) hour, (byte)minute,(byte) second);
-            TimePeriod t2 = new TimePeriod(hour2, (byte)minute2, (byte)second2);
-            Time t3 = t1 + t2;
-            Assert.AreEqual( t1 + t2, t3 );
+            Time t1 = new Time(h2,m2,s2);
+            TimePeriod t2 = new TimePeriod(h, m, s);
+            Time t3 = new Time(expectedH, expectedM, expectedS);
+            Assert.AreEqual( t1+t2, t3 );
         }
 
 
