@@ -472,6 +472,26 @@ namespace Time_TimePeriodUnitTests
             Assert.AreEqual( t1+t2, t3 );
         }
         [TestMethod, TestCategory("Plus operator")]
+        [DataRow("12:12:12", "5:13:23", "17:25:35")]
+        [DataRow("01:52:36", "6:47:13", "08:39:49")]
+        public void CheckOperatorPlusingTimeStringsOnly(string s, string s2, string expectedString)
+        {
+            Time t1 = new Time(s);
+            TimePeriod t2 = new TimePeriod( s2);
+            Time t3 = new Time( expectedString);
+            Assert.AreEqual( t1+t2, t3 );
+        }
+        [TestMethod, TestCategory("Plus operator")]
+        [DataRow("15:32:17", (long) 7420, "17:35:57")]
+        [DataRow("23:12:14", (long) 4578, "00:28:32")]
+        public void CheckOperatorPlusingTimeStringAndSeconds(string s, long s2, string expectedString)
+        {
+            Time t1 = new Time(s);
+            TimePeriod t2 = new TimePeriod( s2);
+            Time t3 = new Time( expectedString);
+            Assert.AreEqual( t1+t2, t3 );
+        }
+        [TestMethod, TestCategory("Plus operator")]
         [DataRow((byte) 3, (byte) 10, (byte) 10,(long) 3600, (byte) 4,(byte) 10, (byte)10)]
         [DataRow((byte) 5, (byte) 22, (byte) 12,(long) 6524, (byte) 7,(byte) 10, (byte)56)]
         [DataRow((byte) 13, (byte) 2, (byte) 56,(long) 8200, (byte) 15,(byte) 19, (byte)36)]
