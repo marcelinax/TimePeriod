@@ -42,20 +42,24 @@ namespace Time_TimePeriod
             
             return new TimePeriod(seconds + timePeriod.seconds);
         }
+        public static TimePeriod TimePeriodPlus(TimePeriod timePeriod,TimePeriod timePeriod2)
+        {
+            
+            return new TimePeriod(timePeriod.seconds + timePeriod2.seconds);
+        }
         public TimePeriod TimePeriodMinus(TimePeriod timePeriod)
         {
-            if (seconds > timePeriod.seconds)
-            {
-                return new TimePeriod(seconds - timePeriod.seconds);
-            }
-            return new TimePeriod(timePeriod.seconds - seconds);
-            
+            return new TimePeriod(seconds - timePeriod.seconds);
+        }
+
+        public static TimePeriod TimePeriodMinus(TimePeriod timePeriod, TimePeriod timePeriod2)
+        {
+            return new TimePeriod(timePeriod.seconds - timePeriod2.seconds);
         }
 
         public TimePeriod(string timePeriod)
         {
             var timeTab = timePeriod.Split(':');
-            
             var h = long.Parse(timeTab[0]) >= 0? long.Parse(timeTab[0]) : throw new ArgumentException("Incorect argument!") ;
             var m = long.Parse(timeTab[1]) < 60? long.Parse(timeTab[1]) : throw new ArgumentException("Incorect argument!") ;
             var s = long.Parse(timeTab[2]) < 60? long.Parse(timeTab[2]) : throw new ArgumentException("Incorect argument!") ;
@@ -73,8 +77,9 @@ namespace Time_TimePeriod
 
         public override bool Equals(object? obj)
         {
-            return false;
+            return base.Equals(obj);
         }
+
 
         public override int GetHashCode()
         {
@@ -97,7 +102,7 @@ namespace Time_TimePeriod
         public static bool operator < (TimePeriod t1, TimePeriod t2) => t1.CompareTo(t2) < 0;
         public static bool operator <= (TimePeriod t1, TimePeriod t2) => t1.CompareTo(t2) <= 0;
         public static TimePeriod operator +(TimePeriod a , TimePeriod b) => a.TimePeriodPlus(b);
-        public static TimePeriod operator -(TimePeriod a, TimePeriod b) => a-b;
+        public static TimePeriod operator -(TimePeriod a, TimePeriod b) => a.TimePeriodMinus(b);
        
     }
 }

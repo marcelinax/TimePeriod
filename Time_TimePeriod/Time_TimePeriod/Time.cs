@@ -103,10 +103,10 @@ namespace Time_TimePeriod
         public static Time TimeMinus(TimePeriod timePeriod, Time time)
         {
             var seconds =  ConvertToSeconds(time)-timePeriod.Seconds;
-            byte h =(byte) (seconds / 3600 > 0? seconds / 3600: seconds / 3600 +24);
+            var h =(byte) (seconds / 3600 >= 0? seconds / 3600: seconds / 3600 +24);
             byte m;
             byte s;
-            if (seconds / 60 % 60 > 0)
+            if (seconds / 60 % 60 >= 0)
             {
                 m = (byte) (seconds / 60 % 60);
             }
@@ -116,7 +116,7 @@ namespace Time_TimePeriod
                 h--;
             }
 
-            if (seconds % 60 > 0)
+            if (seconds % 60 >= 0)
             {
                 s = (byte) (seconds / 60 % 60);
             }
@@ -129,7 +129,7 @@ namespace Time_TimePeriod
         }
         public Time TimeMinus(TimePeriod timePeriod)
         {
-            var seconds = _hours * 3600 + _minutes * 60 + _seconds + timePeriod.Seconds;
+            var seconds = _hours * 3600 + _minutes * 60 + _seconds - timePeriod.Seconds;
             byte h =(byte) (seconds / 3600 > 0? seconds / 3600: seconds / 3600 +24);
             byte m;
             byte s;
