@@ -29,7 +29,7 @@ namespace Time_TimePeriodUnitTests
         } 
         private void AssertTimePeriod(TimePeriod t ,long expectedSeconds)
         {
-            Assert.AreEqual(expectedSeconds, t.Seconds);
+            Assert.AreEqual(expectedSeconds, t._Seconds);
         }
 
 
@@ -115,7 +115,7 @@ namespace Time_TimePeriodUnitTests
         public void DefaultConstructorForTimePeriod()
         {
             TimePeriod t = new TimePeriod();
-            Assert.AreEqual(0, t.Seconds);
+            Assert.AreEqual(0, t._Seconds);
         }
 
         [TestMethod, TestCategory("TimePeriod Constructors")]

@@ -17,7 +17,8 @@ namespace Time_TimePeriod
             var tP = new TimePeriod(3600);
             var t = new Time(22,58,22);
             
-            /*Console.WriteLine(time);
+            
+            Console.WriteLine(time);
             Console.WriteLine(time2);
             Console.WriteLine(timePeriod);
             Console.WriteLine(timePeriod2);
@@ -30,7 +31,7 @@ namespace Time_TimePeriod
             Console.WriteLine(Time.TimeMinus(timePeriod2, time));
             Console.WriteLine(timePeriod3);
             Console.WriteLine(timePeriod2.TimePeriodMinus(timePeriod4));
-            Console.WriteLine(time.TimeMinus(timePeriod2));*/
+            Console.WriteLine(time.TimeMinus(timePeriod2));
             Console.WriteLine(t.TimeMinus(tP));
         }
     }

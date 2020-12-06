@@ -12,8 +12,20 @@ namespace Time_TimePeriod
         /// <summary>
         /// wewnętrzna realizacja czasu trwania w sekundach (typ long)
         /// </summary>
-        public long Seconds => seconds;
-
+        public long _Seconds => seconds;
+        /// <summary>
+        /// zewnętrzna reprezentacja czasu trwania (godziny)
+        /// </summary>
+        public long Hours { get => _Seconds / 3600; }
+        /// <summary>
+        /// zewnętrzna reprezentacja czasu trawania (minuty)
+        /// </summary>
+        public long Minutes { get => _Seconds / 60 % 60;}
+        /// <summary>
+        /// zewnętrzna reprezentacja czasu trwania (sekundy)
+        /// </summary>
+        public long Seconds {get => _Seconds%60;}
+       
         public TimePeriod(ulong hour, byte minute, byte second = 0)
         {
             if(minute > 59) throw new ArgumentException("Incorect argument!");
@@ -67,9 +79,8 @@ namespace Time_TimePeriod
         }
         public override string ToString()
         {
-            return $"{Seconds / 3600}:{(Seconds / 60) % 60:00}:{Seconds % 60:00}";
+            return $"{Hours}:{Minutes:00}:{Seconds:00}";
         }
-
         public bool Equals(TimePeriod other)
         {
             return seconds == other.seconds;

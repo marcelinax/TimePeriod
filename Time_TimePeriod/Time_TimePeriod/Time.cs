@@ -85,7 +85,7 @@ namespace Time_TimePeriod
 
         public Time TimePlus(TimePeriod timePeriod)
         {
-            var seconds = _hours * 3600 + _minutes * 60 + _seconds + timePeriod.Seconds;
+            var seconds = _hours * 3600 + _minutes * 60 + _seconds + timePeriod._Seconds;
             byte h =(byte) (seconds / 3600 > 23 ? seconds / 3600 % 24 : seconds / 3600);
             byte m =(byte) (seconds / 60 % 60);
             byte s = (byte)(seconds % 60);
@@ -93,7 +93,7 @@ namespace Time_TimePeriod
         }
         public static Time TimePlus(TimePeriod timePeriod, Time time)
         {
-            var seconds = ConvertToSeconds(time) + timePeriod.Seconds;
+            var seconds = ConvertToSeconds(time) + timePeriod._Seconds;
             byte h = ( byte) (seconds / 3600 > 23 ? seconds / 3600 % 24 : seconds / 3600);
             byte m = (byte) (seconds / 60 % 60);
             byte s = (byte) (seconds % 60);
@@ -102,7 +102,7 @@ namespace Time_TimePeriod
 
         public static Time TimeMinus(TimePeriod timePeriod, Time time)
         {
-            var seconds =  ConvertToSeconds(time)-timePeriod.Seconds;
+            var seconds =  ConvertToSeconds(time)-timePeriod._Seconds;
             byte h =(byte) (seconds / 3600 >= 0 ? seconds / 3600 : seconds / 3600 + 24);
             byte m;
             byte s;
@@ -130,7 +130,7 @@ namespace Time_TimePeriod
         }
         public Time TimeMinus(TimePeriod timePeriod)
         {
-            var seconds = _hours * 3600 + _minutes * 60 + _seconds - timePeriod.Seconds;
+            var seconds = _hours * 3600 + _minutes * 60 + _seconds - timePeriod._Seconds;
             byte h =(byte) (seconds / 3600 >= 0 ? seconds / 3600 : seconds / 3600 + 24);
             byte m;
             byte s;
