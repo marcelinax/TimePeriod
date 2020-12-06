@@ -614,17 +614,18 @@ namespace Time_TimePeriodUnitTests
         #region Time
         [TestMethod, TestCategory("Minus operator")]
         [DataRow((byte) 3, (byte) 10, (byte) 10,(long) 3600, (byte) 2,(byte) 10, (byte)10)]
-        [DataRow((byte) 13, (byte) 20, (byte) 52,(long) 12344, (byte) 9,(byte) 55, (byte)55)]
-        [DataRow((byte) 21, (byte) 2, (byte) 37,(long) 1490, (byte) 20,(byte) 37, (byte)37)]
+        [DataRow((byte) 13, (byte) 20, (byte) 52,(long) 12344, (byte) 9,(byte) 55, (byte)08)]
+        [DataRow((byte) 21, (byte) 2, (byte) 37,(long) 1490, (byte) 20,(byte) 37, (byte)47)]
         public void OperatorMinusTimeAndTimePeriod(byte h, byte m, byte s, long s2, byte expectedH, byte expectedM, byte expectedS)
         {
             Time t1 = new Time(h,m,s);
             TimePeriod t2 = new TimePeriod(s2);
             Time t3 = new Time(expectedH, expectedM, expectedS);
-            Assert.AreEqual( t1-t2, t3 );
+            Assert.AreEqual( t3, t1-t2 );
         }
-        /*[TestMethod, TestCategory("Minus operator")]
-        [DataRow("05:32:39", "2:11:40","03:20:59")]
+        [TestMethod, TestCategory("Minus operator")]
+        [DataRow("05:11:40", "2:11:39","03:00:01")]
+        [DataRow("21:48:56", "12:26:45","09:22:11")]
        
         public void OperatorMinusTimeAndTimePeriodWithStrings(string time, string timePeriod, string expectedString)
         {
@@ -634,7 +635,8 @@ namespace Time_TimePeriodUnitTests
             Assert.AreEqual( t3, t1-t2 );
         }
         [TestMethod, TestCategory("Minus operator")]
-        [DataRow((byte) 22,(byte) 58,(byte) 22, (long) 3600,"22:58:22")]
+        [DataRow((byte) 22,(byte) 58,(byte) 22, (long) 3600,"21:58:22")]
+        [DataRow((byte) 5,(byte) 12,(byte) 32, (long) 45896,"16:27:36")]
        
         public void OperatorMinusTimeAndTimePeriodAsString(byte h, byte m, byte s, long s2, string expectedString)
         {
@@ -642,7 +644,17 @@ namespace Time_TimePeriodUnitTests
             TimePeriod t2 = new TimePeriod(s2);
             Time t3 = new Time(expectedString);
             Assert.AreEqual( t3, t1-t2 );
-        }*/
+        }
+        [TestMethod, TestCategory("Minus operator")]
+        [DataRow("03:14:12",(long) 54678,(byte) 12,(byte) 02,(byte) 54)]
+        [DataRow("16:59:01",(long) 12478,(byte) 13,(byte) 31,(byte) 03)]
+        public void OperatorMinusTimeAndTimePeriodWithStringAndParams(string s, long s2, byte expectedH, byte expectedM, byte expectedS)
+        {
+            Time t1 = new Time(s);
+            TimePeriod t2 = new TimePeriod(s2);
+            Time t3 = new Time(expectedH,expectedM,expectedS);
+            Assert.AreEqual( t3, t1-t2 );
+        }
         #endregion
         #endregion
     }
