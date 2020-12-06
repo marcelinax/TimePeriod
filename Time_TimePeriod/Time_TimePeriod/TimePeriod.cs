@@ -20,11 +20,11 @@ namespace Time_TimePeriod
         /// <summary>
         /// zewnętrzna reprezentacja czasu trawania (minuty)
         /// </summary>
-        public long Minutes { get => _Seconds / 60 % 60;}
+        public byte Minutes { get => (byte)(_Seconds / 60 % 60);}
         /// <summary>
         /// zewnętrzna reprezentacja czasu trwania (sekundy)
         /// </summary>
-        public long Seconds {get => _Seconds%60;}
+        public byte Seconds {get => (byte) (_Seconds%60);}
        
         public TimePeriod(ulong hour, byte minute, byte second = 0)
         {
